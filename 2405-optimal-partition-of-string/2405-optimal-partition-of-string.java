@@ -13,13 +13,13 @@ import java.util.*;
 class Solution {
     public int partitionString(String s) {
         int count = 1;
-        StringBuilder substring = new StringBuilder();
+        String substring = "";
         for (char c : s.toCharArray()) {
-            if (substring.indexOf(String.valueOf(c)) != -1) {
+            if (substring.contains(String.valueOf(c))) {
                 count++;
-                substring = new StringBuilder();
+                substring = "";
             }
-            substring.append(c);
+            substring += String.valueOf(c);
         }
         return count;
     }
